@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>华体会 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f7f4;
+            color: #2a2a2a;
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            line-height: 1.7;
+            padding: 0 24px;
+        }
+
+        .page {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 0 64px;
+        }
+
+        /* hero 区域 — 杂志扉页感 */
+        .hero {
+            margin-bottom: 48px;
+            border-bottom: 1px solid #dcd8d0;
+            padding-bottom: 32px;
+        }
+
+        .hero .label {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a09b92;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            color: #1d1d1b;
+        }
+
+        .hero .sub {
+            margin-top: 20px;
+            font-style: italic;
+            color: #6b655c;
+            font-size: 16px;
+            border-left: 2px solid #cbc5bc;
+            padding-left: 20px;
+        }
+
+        /* 正文 & 标题层级 */
+        h2 {
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin: 40px 0 14px;
+            color: #1f1e1c;
+            border-bottom: none;
+            position: relative;
+        }
+
+        h2::before {
+            content: "·";
+            color: #b7afa4;
+            margin-right: 10px;
+            font-weight: 300;
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 16px;
+            color: #3b3834;
+        }
+
+        .small-note {
+            font-size: 14px;
+            color: #7b756c;
+            letter-spacing: 0.3px;
+        }
+
+        /* 引用式 pull-quote */
+        .pull-quote {
+            margin: 36px 0 32px;
+            padding: 24px 28px;
+            background: #efede8;
+            font-size: 18px;
+            font-style: italic;
+            color: #2f2c27;
+            border-radius: 2px;
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+
+        .pull-quote em {
+            font-style: normal;
+            background: #e2ddd6;
+            padding: 1px 6px;
+        }
+
+        /* 分割线 */
+        .divider {
+            margin: 40px 0 32px;
+            height: 1px;
+            background: #ddd8d0;
+            width: 60px;
+        }
+
+        /* 页脚 — 杂志底栏风格 */
+        .footer-note {
+            margin-top: 56px;
+            padding-top: 28px;
+            border-top: 1px solid #dcd8d0;
+            font-size: 14px;
+            color: #6f6960;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .footer-note a {
+            color: #3f3b35;
+            text-decoration: none;
+            border-bottom: 1px solid #c5beb4;
+            padding-bottom: 2px;
+            transition: border-color 0.15s;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #8f867a;
+        }
+
+        .tag {
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #a49d93;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            body {
+                padding: 0 16px;
+            }
+
+            .page {
+                padding-top: 28px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero .sub {
+                font-size: 15px;
+                padding-left: 14px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .pull-quote {
+                padding: 18px 18px;
+                font-size: 16px;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 杂志式首页横幅 -->
+        <div class="hero">
+            <div class="label">专题 · 在场</div>
+            <h1>华体会：<br>一种观察的入口</h1>
+            <div class="sub">
+                从日常语汇的褶皱里，<br>
+                辨认一条尚未清晰标注的路径。
+            </div>
+        </div>
+
+        <!-- 背景说明 -->
+        <h2>背景 · 词与物的间隙</h2>
+        <p>
+            在信息流动的速度远超过理解的年代，许多词被反复使用，却很少被真正注视。
+            「华体会」三个字，最早出现在一份讨论社区感知的笔记中——它并非口号，而更像一个临时的标记，
+            用来指代那种“在参与中逐渐成形”的认知方式。后来这个词在不同的对话里被拾起、调整，逐渐有了自己的重量。
+        </p>
+        <p class="small-note">
+            我们并不急于为它下定义。更合适的做法，是让它保持某种开放性：既可以被阅读，也可以被使用。
+        </p>
+
+        <!-- 三段自然介绍 · 从三个侧面展开 -->
+        <h2>侧面一 · 作为方法的体会</h2>
+        <p>
+            体会，不是快速归纳，而是缓慢浸入。一件作品、一个空间、一次交流——如果只是远远打量，
+            得到的往往只是轮廓。但当你真正进入、触摸、甚至被它改变，那种理解才称得上“体”。
+            <a href="https://homeapp-hth.com.cn">华体会</a>所尝试的，
+            正是将这种体察转化为一种可以重复练习的日常动作，而不是偶尔的灵光一现。
+        </p>
+
+        <div class="pull-quote">
+            “我们不是在找答案，而是在练习一种提问的方式。”
+        </div>
+
+        <h2>侧面二 · 不被归类的中介状态</h2>
+        <p>
+            有很多框架试图把一切收纳进已有的抽屉：这是艺术，那是技术；这是主观，那是客观。
+            但实际的经验往往游走在分类的缝隙里。<strong>华体会</strong>恰恰选择停留在那种未被命名的中间地带——
+            它既不完全属于创作者，也不完全属于观看者；它更像一场持续的对话，双方都在调整自己的位置。
+        </p>
+        <p class="small-note">
+            这种状态不稳定，但充满活力。我们相信，有价值的思考经常发生在边界模糊之处。
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>侧面三 · 窄径与开阔</h2>
+        <p>
+            杂志式的版面、留白、缓慢的阅读节奏——这些设计并非装饰，而是一种邀请。
+            当你把注意力收窄到一页纸的宽度，反而可能看见更开阔的景深。
+            在 <a href="https://homeapp-hth.com.cn">华体会</a> 的空间里，
+            我们试图保留这种“有限中的无限”：篇幅不长，但每个句子都可以停下来想一想。
+        </p>
+        <p>
+            如果你已经读到此处，或许已经隐约感受到了这种节奏。它不急于证明什么，
+            只是提供一种可能：在嘈杂中划出一小块安静，然后试试看能长出什么。
+        </p>
+
+        <!-- FAQ 摘要式提示 -->
+        <div style="margin-top: 48px; background: #f0ede8; padding: 20px 24px; border-left: 3px solid #cbc2b6;">
+            <p style="font-size: 15px; margin-bottom: 8px; font-weight: 500; color: #2a2722;">常见理解中的疑问</p>
+            <p style="font-size: 14px; color: #4d4840; margin-bottom: 6px;">
+                Q：这是一个固定的平台或组织吗？<br>
+                A：目前更像一个持续调整的视角集合——不排除未来有更具体的形态，但核心是保持体会的质地。
+            </p>
+            <p style="font-size: 14px; color: #4d4840;">
+                Q：我可以参与吗？<br>
+                A：如果你读到哪句话让你想停下来，那本身就是参与的开始。
+            </p>
+        </div>
+
+        <!-- 页尾访问提示 -->
+        <div class="footer-note">
+            <span>继续阅读 · <a href="https://homeapp-hth.com.cn">华体会</a></span>
+            <span class="tag">杂志专题 · 2025</span>
+        </div>
+    </div>
+</body>
+</html>

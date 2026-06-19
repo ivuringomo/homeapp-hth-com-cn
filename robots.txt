@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ivuringomo.github.io/homeapp-hth-com-cn/sitemap.xml
