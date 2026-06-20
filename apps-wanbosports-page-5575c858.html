@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万博体育 · 综合运动服务平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f6fa;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1e2024;
+        }
+
+        /* ----- 深色头图 (杂志横幅) ----- */
+        .hero {
+            background: linear-gradient(145deg, #0e1622 0%, #1f2b3a 100%);
+            color: #eef1f5;
+            padding: 4.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: -40px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 195, 0, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0.8rem auto 1.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 1.2rem;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #f5b342;
+            color: #0e1622;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        /* ----- 浅色正文区域 (杂志卡片式分段) ----- */
+        .content-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 2.5rem;
+        }
+
+        .section-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #12161c;
+            border-left: 5px solid #f5b342;
+            padding-left: 1rem;
+        }
+
+        .section-card p {
+            margin-bottom: 1rem;
+            color: #2e333b;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #c9771a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #a45f12;
+            border-bottom-color: #a45f12;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #f9faff;
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .feature-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #4c525e;
+        }
+
+        /* 页尾访问提示 */
+        .visit-note {
+            background: #eef2f7;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0 1rem;
+            text-align: center;
+            border: 1px solid #dfe5ed;
+        }
+
+        .visit-note p {
+            font-size: 1.1rem;
+            color: #1c232f;
+            margin-bottom: 0.5rem;
+        }
+
+        .visit-note .link-wrapper {
+            font-size: 1.2rem;
+        }
+
+        .footnote {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+            font-size: 0.9rem;
+            color: #6d7584;
+            border-top: 1px solid #d9dfe9;
+            margin-top: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .section-card {
+                padding: 1.6rem 1.2rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .feature-item {
+                flex: 1 1 auto;
+            }
+            .visit-note {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 5rem 3rem 4.5rem;
+            }
+            .content-wrap {
+                padding: 3.5rem 2.5rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="badge">综合运动 · 一站聚合</div>
+        <h1>万博体育</h1>
+        <p class="sub">从运动资讯到互动体验，快速识别你需要的体育场景</p>
+    </header>
+
+    <main class="content-wrap">
+
+        <!-- 第一段 · 背景说明 + 用途识别 -->
+        <section class="section-card">
+            <h2>为什么很多人会找「万博体育」？</h2>
+            <p>一个网站被频繁搜索，往往是因为它提供了一种清晰、直接的体育服务触点。当你打开 <a href="https://apps-wanbosports.com">万博体育</a> 的主页，首先感觉到的是分类明确的信息流——赛程、数据、项目介绍……没有多余的跳转。无论你是想快速了解当前热门运动，还是想查阅某项赛事的背景资料，这个页面都能帮你省去四处翻找的精力。</p>
+            <p>从使用者的反馈来看，大家最常提到的就是「一眼找到自己关心的内容」。这种直觉化的布局，恰好满足了体育爱好者「快速切入、不想浪费时间」的习惯。</p>
+        </section>
+
+        <!-- 第二段 · 三段自然介绍之——场景拆解 + 特点卡片 -->
+        <section class="section-card">
+            <h2>日常使用场景：不止一种打开方式</h2>
+            <p>有人习惯在午休时刷新一下赛事列表，有人则喜欢在周末研究深度数据。无论哪种节奏，<a href="https://apps-wanbosports.com">万博体育</a> 呈现的信息结构都偏向「杂志式」——头图引导、模块清晰、阅读负担低。下面几个特点，或许就是它逐渐成为一些人默认入口的原因：</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">🏀</div>
+                    <h3>多项目覆盖</h3>
+                    <p>足球、篮球、网球等常见运动品类均设有专属板块，减少跨站搜索。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <h3>数据轻量化</h3>
+                    <p>比分、排名、近期走势以卡片形式呈现，移动端阅读也很舒服。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🧭</div>
+                    <h3>导航直觉化</h3>
+                    <p>顶部与侧边入口围绕「找赛事、看资讯、查数据」三个核心动作设计。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第三段 · 自然介绍 + 常见疑问摘要 -->
+        <section class="section-card">
+            <h2>一些用户常提到的疑问</h2>
+            <p>「网站信息更新快吗？」——从日常观察来看，重点赛事的比分和赛程基本能做到实时同步；「手机浏览器打开会不会变形？」——页面针对竖屏做了适配，卡片会自动重排；「有没有必要注册？」——大部分浏览功能不需要登录，直接打开 <a href="https://apps-wanbosports.com">万博体育</a> 就能使用。</p>
+            <p>当然，每个人的使用习惯不同，你可能会发现一些隐藏的便利设计。比如在页面底部，通常会提供快速返回顶部或切换板块的按钮，这些小细节也是整体体验的一部分。</p>
+        </section>
+
+        <!-- 页尾访问提示（自然嵌入链接） -->
+        <div class="visit-note">
+            <p>如果你还没浏览过，不妨把 <a href="https://apps-wanbosports.com">万博体育</a> 加入书签。</p>
+            <p class="link-wrapper">一个页面，聚合你关心的运动信息。</p>
+        </div>
+
+        <footer class="footnote">
+            <span>万博体育 · 基于公开信息整理的介绍页</span>
+        </footer>
+
+    </main>
+
+</body>
+</html>
