@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>jiuyou · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background: #f2f2f0;
+      color: #2e2e2c;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.2rem 1.6rem;
+      flex: 1;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      background: linear-gradient(145deg, #f9f9f7 0%, #ecebe8 100%);
+      border: 1px solid #d6d5d2;
+      border-radius: 32px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+      padding: 3rem 2.5rem 2.8rem;
+      margin-bottom: 2.8rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 350;
+      letter-spacing: 4px;
+      color: #3b3b38;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #6b6a66;
+      border-top: 1px solid #cfcdc9;
+      display: inline-block;
+      padding-top: 0.8rem;
+      margin-top: 0.6rem;
+    }
+
+    .hero .sub span {
+      background: #e5e4e0;
+      padding: 0.2rem 0.8rem;
+      border-radius: 24px;
+      font-size: 0.8rem;
+      color: #4f4e4a;
+      letter-spacing: 0.5px;
+    }
+
+    /* 背景说明 - 窄框 */
+    .context-note {
+      background: #ebebe7;
+      border: 1px solid #dcdad6;
+      border-radius: 28px;
+      padding: 1.4rem 2rem;
+      margin-bottom: 2.6rem;
+      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.6), 0 4px 8px rgba(0, 0, 0, 0.02);
+      font-size: 0.95rem;
+      color: #464542;
+    }
+
+    .context-note strong {
+      font-weight: 500;
+      color: #3b3b38;
+    }
+
+    /* 三段自然介绍 —— 卡片式 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .card {
+      background: #f9f9f6;
+      border: 1px solid #dddbd7;
+      border-radius: 28px;
+      padding: 1.8rem 2.2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 380;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+      color: #44433f;
+      border-left: 3px solid #b6b3ae;
+      padding-left: 1rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #3d3d39;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card .meta-tag {
+      display: inline-block;
+      background: #e5e2dd;
+      color: #4b4a45;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      margin-top: 0.4rem;
+    }
+
+    /* 小 faq 摘要 (点缀) */
+    .faq-mini {
+      background: #f0efeb;
+      border: 1px solid #d2d0cb;
+      border-radius: 32px;
+      padding: 1.8rem 2.2rem;
+      margin-bottom: 2.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      flex: 1 1 200px;
+    }
+
+    .faq-item .q {
+      font-weight: 470;
+      color: #3d3d39;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .a {
+      font-size: 0.9rem;
+      color: #5e5d58;
+      border-left: 2px solid #c5c2bc;
+      padding-left: 0.8rem;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      border-top: 1px solid #d8d6d1;
+      padding-top: 2rem;
+      margin-top: 0.4rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #5b5a55;
+    }
+
+    .footer-note a {
+      color: #3b3a36;
+      text-decoration: none;
+      border-bottom: 1px solid #b9b6b0;
+      transition: border-color 0.15s;
+    }
+
+    .footer-note a:hover {
+      border-bottom-color: #3b3a36;
+    }
+
+    .footer-note .light {
+      color: #7a7974;
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d4d2cd;
+      margin: 2rem 0 0.8rem;
+      opacity: 0.5;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .page-wrap {
+        padding: 1.4rem 1rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .faq-mini {
+        padding: 1.4rem 1.2rem;
+        flex-direction: column;
+      }
+      .context-note {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>jiuyou</h1>
+    <div class="sub">
+      <span>一份不着急的访问备忘</span>
+    </div>
+  </div>
+
+  <!-- 背景说明 -->
+  <div class="context-note">
+    <strong>关于这个站点</strong> · 
+    它像一本轻便的笔记，记录着一些日常中容易被忽略的细节。你可以把它看作一个安静的角落，没有推送，没有弹窗，只有文字和信息本身。
+  </div>
+
+  <!-- 三段自然介绍 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>界面与节奏</h2>
+      <p>第一次打开 jiuyou 时，你可能注意到它的布局偏向克制：大量留白、浅灰色调，信息层级简单。这不是为了追赶某种设计风潮，而是希望让阅读者把注意力放回内容上。</p>
+      <p>没有自动播放的视频，也没有闪烁的广告位。你看到的每个元素都有它存在的理由，但不会抢着对你说话。</p>
+      <span class="meta-tag">简洁不是单调</span>
+    </div>
+
+    <div class="card">
+      <h2>内容与距离</h2>
+      <p>这里的内容往往围绕实用信息展开，偶尔夹杂一些观察。比如某个功能的说明、一段使用场景的梳理，或者只是对常见疑问的平实回答。</p>
+      <p>jiuyou 不试图成为权威，也不制造焦虑。它更像一个愿意陪你慢慢看完说明的朋友，不会催你，也不会给你兜售什么。</p>
+      <span class="meta-tag">自然叙述，不渲染</span>
+    </div>
+
+    <div class="card">
+      <h2>访问与预期</h2>
+      <p>如果你打算去站内看看，不妨抱着“随便翻翻”的心态。不需要注册，不需要关注。有些页面可能很简单，但那是它本来的样子。</p>
+      <p>你可能会在某个角落找到自己需要的东西，也可能没有。但这趟浏览本身，至少不会让你觉得疲惫。</p>
+      <span class="meta-tag">低预期，低负担</span>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要（点缀） -->
+  <div class="faq-mini">
+    <div class="faq-item">
+      <div class="q">大致有哪些内容？</div>
+      <div class="a">功能说明、场景建议、常见疑问整理，偶尔有简短随笔。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">第一次去要注意什么？</div>
+      <div class="a">不需要做任何准备，直接浏览即可。没有新手引导，也无需注册。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">为何叫 jiuyou ？</div>
+      <div class="a">只是一个名字，没有特别含义。就像路边一家姓久的小铺子。</div>
+    </div>
+  </div>
+
+  <!-- 页尾提示 + 强制 a 标签 -->
+  <div class="footer-note">
+    <p>
+      你正在阅读的是关于 <a href="https://m-site-jiuyou.com">jiuyou</a> 的一份简要介绍。
+    </p>
+    <p class="light">
+      页面内容仅作参考，不构成任何建议或承诺。
+    </p>
+    <hr>
+    <p class="light" style="margin-top: 1.2rem;">
+      — 如果想去站内看看，上面句子中已经包含了地址 —
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
